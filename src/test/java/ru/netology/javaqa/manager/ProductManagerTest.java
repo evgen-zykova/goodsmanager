@@ -9,7 +9,6 @@ import ru.netology.javaqa.domain.Smartphone;
 import ru.netology.javaqa.repository.ProductRepository;
 
 public class ProductManagerTest {
-
     ProductRepository repository = new ProductRepository();
     ProductManager manager = new ProductManager(repository);
 
@@ -18,6 +17,7 @@ public class ProductManagerTest {
     Product product3 = new Smartphone(18, "Самсунг R50", 80_000, "Samsung");
 
     Product product4 = new Book(15, "Идиот", 700, "Достоевский");
+
 
     @BeforeEach
     public void setup() {
@@ -37,17 +37,25 @@ public class ProductManagerTest {
 
     }
 
+
     @Test
 
-    public void shouldByBookAuthor() {
-        Product[] expected = new Product[] {product2};
-        Product[] actual = manager.searchBy("Толстой");
+    public void shouldSearchByText() {
+        Product[] expected = {product2};
+        Product[] actual = manager.searchBy("Война");
 
         Assertions.assertArrayEquals(expected, actual);
-
-
 
     }
 
 
 }
+
+
+
+
+
+
+
+
+
