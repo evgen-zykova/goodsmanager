@@ -34,7 +34,6 @@ public class ProductManagerTest {
         Product[] actual = manager.getAll();
 
         Assertions.assertArrayEquals(expected, actual);
-
     }
 
 
@@ -45,10 +44,26 @@ public class ProductManagerTest {
         Product[] actual = manager.searchBy("Война");
 
         Assertions.assertArrayEquals(expected, actual);
-
     }
 
+    @Test
 
+    public void shouldSearchByPartOfWord() {
+        Product[] expected = {product4};
+        Product[] actual = manager.searchBy("от");
+
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
+    @Test
+
+    public void shouldSearchForNonExistentName() {
+
+        Product[] expected = {};
+        Product[] actual = manager.searchBy("стол");
+
+        Assertions.assertArrayEquals(expected, actual);
+    }
 }
 
 
