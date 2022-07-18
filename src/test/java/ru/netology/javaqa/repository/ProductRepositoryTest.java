@@ -9,9 +9,9 @@ import ru.netology.javaqa.domain.Smartphone;
 
 public class ProductRepositoryTest {
 
-    Product product1 = new Smartphone(11, "Айфон", 100_000, "Apple");
+    Product product1 = new Smartphone(11, "Айфон 10", 100_000, "Apple");
     Product product2 = new Book(152, "Война и мир", 500, "Толстой");
-    Product product3 = new Smartphone(18, "Самсунг R50", 80_000, "Samsung");
+    Product product3 = new Smartphone(18, "Айфон 13", 80_000, "Apple");
     Product product4 = new Book(15, "Идиот", 700, "Достоевский");
 
     @Test
